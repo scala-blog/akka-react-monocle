@@ -7,6 +7,10 @@ case class ApplicationContainer(var app: Application = Application())
 case class Application
 (
   counter1: Counter = Counter(),
-  counter2: Counter = Counter()
+  counter2: Counter = Counter(),
+  counterList: Vector[Counter] =
+  Vector(
+      Counter(), Counter(), Counter()
+    )
 )
 
