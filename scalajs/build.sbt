@@ -18,6 +18,12 @@ npmDevDependencies in Compile += "webpack-merge" -> "4.2.2"
 libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.6.5"
 libraryDependencies += "me.shadaj" %%% "slinky-hot" % "0.6.5"
 
+libraryDependencies ++= Seq(
+  "com.github.julien-truffaut" %%%  "monocle-core"  % "2.0.4",
+  "com.github.julien-truffaut" %%%  "monocle-macro" % "2.0.4",
+  "com.github.julien-truffaut" %%%  "monocle-law"   % "2.0.4" % "test"
+)
+
 // https://mvnrepository.com/artifact/com.typesafe.akka/akka-actor
 
 libraryDependencies += "org.akka-js" %%% "akkajsactor" % "2.2.6.5"
