@@ -40,6 +40,7 @@ object ApplicationProxy {
   }
   def render() = {
 
+    val modelApp = models.topModel.app
     div(className := "App")(
       header(className := "App-header")(
         img(src := ReactLogo.asInstanceOf[String], className := "App-logo", alt := "logo"),
@@ -49,14 +50,15 @@ object ApplicationProxy {
         "To get started, edit ", code("App.scala"), " and save to reload."
       ),
       button(
-        s"Click to increment counter1 ${models.topModel.app.counter1.value}",
+        s"Click to increment counter2 ${counter1Lens.getOption(modelApp).head.value}",
         onClick := (_ => {
           MessageHandler.actor ! IncrementCounter(counter1Lens)
         })
       ),
       br(),br(),
       button(
-        s"Click to increment counter2 ${models.topModel.app.counter2.value}",
+        s"Click to increment counter2 ${counter2Lens.getOption(modelApp).head.value}",
+//        s"Click to increment counter2 ${models.topModel.app.counter2.value}",
         onClick := (_ => {
           MessageHandler.actor ! IncrementCounter(counter2Lens)
         })

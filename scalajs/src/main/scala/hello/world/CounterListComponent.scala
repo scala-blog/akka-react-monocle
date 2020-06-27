@@ -28,8 +28,7 @@ import scala.collection.SortedMap
 
   def render() = {
 
-    val counterListLens = props  // for doc purposes
-
+    val counterListLens:Optional[Application, Vector[Counter]] = props  // for doc purposes
     // our lens gives two way access to Vector[Counter], get and update
     val counterListOption = counterListLens.getOption(models.topModel.app)
 
